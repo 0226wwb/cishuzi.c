@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include<time.h>
+void meun()
+{
+	printf("#################\n");
+	printf("###1.play   0.ecit########\n");
+	printf("#################\n");
+}
+void game()
+{
+	int ret = 0;
+	//时间戳来生成起始点
+	//time_t time(time_t*time)
+	/*srand(unsigned int)time(NULL);*/
+	ret = rand();
+	printf("%d\n", ret);
+
+}
+int main()
+{
+	int input;
+	srand((unsigned int)time(NULL));
+	do {
+
+		meun();
+		printf("请选择>;");
+		scanf_s("%d", &input);
+		switch (input)
+		{
+		case 1:game(); break;
+		case 0:printf("退出游戏\n");
+		default:
+			printf("选择错误\n");
+			break;
+		}
+	} while (input);
+	return 0;
+}
